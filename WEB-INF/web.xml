@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <servlet>
+        <servlet-name>feedServlet</servlet-name>
+        <servlet-class>FeedServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>userServlet</servlet-name>
+        <servlet-class>UserServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>articleServlet</servlet-name>
+        <servlet-class>ArticleServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>mailServlet</servlet-name>
+        <servlet-class>MailServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>savedServlet</servlet-name>
+        <servlet-class>SavedServlet</servlet-class>
+    </servlet>
+
+    <filter>
+        <filter-name>authFilter</filter-name>
+        <filter-class>AuthFilter</filter-class>
+    </filter>
+
+    <servlet-mapping>
+        <servlet-name>feedServlet</servlet-name>
+        <url-pattern>/feed</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>userServlet</servlet-name>
+        <url-pattern>/user</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>articleServlet</servlet-name>
+        <url-pattern>/articles</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>mailServlet</servlet-name>
+        <url-pattern>/mail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>savedServlet</servlet-name>
+        <url-pattern>/saved</url-pattern>
+    </servlet-mapping>
+
+    <filter-mapping>
+        <filter-name>authFilter</filter-name>
+        <servlet-name>feedServlet</servlet-name>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>authFilter</filter-name>
+        <servlet-name>mailServlet</servlet-name>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>authFilter</filter-name>
+        <servlet-name>savedServlet</servlet-name>
+    </filter-mapping>
+
+</web-app>
